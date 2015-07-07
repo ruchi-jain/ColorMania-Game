@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="Color mania"/>
+
+    <title>Color Mania</title>
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/jquery.mobile-1.4.5.min.js"><</script>
+
+<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <script src="js/main.js"></script>
+     <script>
+     window.addEventListener('tizenhwkey', function(e) {
+         if (e.keyName == "back") {
+        	  window.location.href="homepage.html";
+         }
+     });
+     </script>
+</head>
+
+<body>
+
+  <div data-role="page" id="level9">
+    <header>
+      <h1>
+        <img src="images/suzuki.png" width="32"/> Color Mania
+      </h1>
+    </header>
+    
+	
+  <div class="product-preview">
+				<div class="product">
+					
+					<img id="mask" src="images/cherry/cherry.png" align="middle" alt="Image" >
+				</div>
+		
+				
+				<h4>Choose a Color:</h4>
+				<div class="swatch">
+					<a href="#mask" data-role="button" onclick="changeImage(this)" style="background: rgb(0,51,204);"></a>
+					<a href="#mask" data-role="button" onclick="changeImage(this)" style="background: rgb(229,151,3);"></a>
+					<a href="#mask" data-role="button" onclick="changeImage(this)" style="background: Orange;"></a>
+					
+					<a href="#mask" data-role="button" onclick="changeImage(this)" style="background: rgb(182,14,22);"></a>
+					<a href="#mask" data-role="button" onclick="changeImage(this)" style="background: Purple;"></a>
+					<a href="#mask" data-role="button" onclick="changeImage(this)" style="background: Red;"></a>
+					<a href="#mask" data-role="button" onclick="changeImage(this)" style="background: rgb(34,177,76);"></a>
+				<!-- 	
+					<a rel="32,223,95" href="#mask" class="" title="Green"><span style="background: rgba(32, 223, 95, 0.74902);">Green</span></a>
+					<a rel="255,211,8" href="#mask" class="" title="Yellow"><span style="background: rgba(255, 211, 8, 0.74902);">Yellow</span></a>
+					<a rel="255,101,8" href="#mask" class="" title="Orange"><span style="background: rgba(255, 101, 8, 0.74902);">Orange/a&gt;
+					</span></a><a rel="16,200,255" href="#mask" class="" title="Blue"><span style="background: rgba(16, 200, 255, 0.74902);">Blue</span></a>
+					<a rel="142,8,255" href="#mask" class="active" title="Purple"><span style="background: rgba(142, 8, 255, 0.74902);">Purple</span></a>
+					<a rel="245,25,45" href="#mask" class="" title="Red"><span style="background: rgba(245, 25, 45, 0.74902);">Red</span></a> -->
+				</div>
+			</div>
+			
+			
+			<script>
+			var flag1="";
+			var flag2="";
+
+function changeImage(el) {
+console.log(jQuery(el).css('background-color'));
+	if( jQuery(el).css('background-color') == "rgb(182, 14, 22)" )
+		{
+		//console.log("1: " + jQuery(el).css('background-color'));
+		flag1="rgb(182, 14, 22)";
+		if (flag2!=""){
+			 $('#mask').attr("src", "images/cherry/cherry2.png");
+		   alert("Correct- Cherry, Move to Next level");
+	       setTimeout(nextLevel, 500);}
+		else
+	   	$('#mask').attr("src", "images/cherry/cherry3.png");
+				}
+	else if( jQuery(el).css('background-color') == "rgb(34, 177, 76)"  )
+		
+	    {
+		//console.log("2: " + jQuery(el).css('background-color'));
+		 flag2= "rgb(34, 177, 76)";
+		 if (flag1!=""){
+			 $('#mask').attr("src", "images/cherry/cherry2.png");
+		   alert("Correct- Cherry, Move to Next level");
+	       setTimeout(nextLevel, 500);}
+		else
+	     $('#mask').attr("src", "images/cherry/cherry1.png");
+	    
+	 	}
+	else
+	 {
+     jQuery(el).remove();
+    // console.log("4: " + jQuery(el).css('background-color'));
+	 }
+	 	 
+      }
+      
+function nextLevel()
+{
+	window.location = 'level10.html';
+	}
+
+			</script>
+
+  <footer>
+    <p>&copy; 2015 Dew Software. All rights reserved.</p>
+  </footer>   </div> 
+  
+  
+   
+</body>
+</html>
