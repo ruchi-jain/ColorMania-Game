@@ -18,6 +18,10 @@
         	  window.location.href="homepage.html";
          }
      });
+     $(document).ready(function(){
+   		$('#next').click(function(){
+   			document.location.href="homepage.html";
+   		});});
      </script>
 </head>
 
@@ -60,6 +64,7 @@
 				</div>
 			</div>
 			
+					
 			
 			<script>
 			var flag1="";
@@ -75,8 +80,7 @@ console.log(jQuery(el).css('background-color'));
 		flag1="rgb(237, 28, 36)";
 		if (flag2!="" && flag3!="" && flag4!=""){
 			 $('#mask').attr("src", "images/ebay/ebay4.png");
-		   alert("Correct- ebay, You won");
-	       setTimeout(nextLevel, 500);}
+			 $.mobile.changePage("#myDialog");}
 		else if(flag2!="" && flag3!="" && flag4 == ""  )
 			$('#mask').attr("src", "images/ebay/ebay3.png");
 		else if(flag2=="" && flag3!="" && flag4!="")
@@ -98,8 +102,7 @@ console.log(jQuery(el).css('background-color'));
 		flag2="rgb(63, 72, 204)";
 		if (flag1!="" && flag3!="" && flag4!=""){
 			 $('#mask').attr("src", "images/ebay/ebay4.png");
-		   alert("Correct- ebay, You won");
-	       setTimeout(nextLevel, 500);}
+			 $.mobile.changePage("#myDialog");}
 		else if(flag1!="" && flag3!="" && flag4 == ""  )
 			$('#mask').attr("src", "images/ebay/ebay3.png");
 		else if(flag1=="" && flag3!="" && flag4!="")
@@ -122,8 +125,7 @@ console.log(jQuery(el).css('background-color'));
 	 flag3= "rgb(255, 201, 14)";
 	 if (flag1!="" && flag2!="" && flag4!=""){
 		 $('#mask').attr("src", "images/ebay/ebay4.png");
-	   alert("Correct- ebay, You won");
-       setTimeout(nextLevel, 500);}
+		 $.mobile.changePage("#myDialog");}
 	else if(flag1!="" && flag2!="" && flag4 == ""  )
 		$('#mask').attr("src", "images/ebay/ebay3.png");
 	else if(flag1=="" && flag2!="" && flag4!="")
@@ -146,8 +148,7 @@ else if( jQuery(el).css('background-color') == "rgb(181, 230, 29)"  )
 	 flag4= "rgb(181, 230, 29)";
 	 if (flag1!="" && flag2!="" && flag3!=""){
 		 $('#mask').attr("src", "images/ebay/ebay4.png");
-	   alert("Correct- ebay, You won");
-       setTimeout(nextLevel, 500);}
+		 $.mobile.changePage("#myDialog");}
 	else if(flag1!="" && flag2!="" && flag3 == ""  )
 		$('#mask').attr("src", "images/ebay/ebay14.png");
 	else if(flag1=="" && flag2!="" && flag3!="")
@@ -182,7 +183,23 @@ function nextLevel()
     <p>&copy; 2015 Dew Software. All rights reserved.</p>
   </footer>   </div> 
   
-  
+  <div id="myDialog" data-role="dialog" style="top:0px;left:0px" class="ui-dialog-contain ui-corner-all ui-overlay-shadow">
+	
+		<div data-role="header" data-theme="d" class="ui-corner-top ui-header ui-bar-d" role="banner">
+		
+			<h1 class="ui-title" role="heading" aria-level="1">AWESOME! <br> COMPLETE!!</h1>
+
+		</div>
+
+		<div data-role="content" data-theme="c" class="ui-corner-bottom ui-content ui-body-c" role="main">
+			
+			 <img src="images/ebay/ebay4.png" style=" display: block;margin-left: auto;margin-right: auto" /> 
+			 <br> <p style="margin-left: 45%;"> EBAY</p> <br>
+			
+		 		<img src="images/home.png" id="next" style="display: block;margin-left: auto;margin-right: auto"/>
+	 		
+		</div>
+	</div>
    
 </body>
 </html>

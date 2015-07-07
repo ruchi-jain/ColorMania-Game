@@ -18,6 +18,10 @@
         	  window.location.href="homepage.html";
          }
      });
+     $(document).ready(function(){
+  		$('#next').click(function(){
+  			document.location.href="level7.html";
+  		});});
      </script>
 </head>
 
@@ -59,6 +63,7 @@
 			</div>
 			
 			
+			
 			<script>
 			var flag1="";
 			var flag2="";
@@ -72,8 +77,10 @@ console.log(jQuery(el).css('background-color'));
 		flag1="rgb(11, 171, 124)";
 		if (flag2!="" && flag3!=""){
 			 $('#mask').attr("src", "images/pizzahut/pizzahut.png");
-		   alert("Correct- Pizza Hut, Move to Next level");
-	       setTimeout(nextLevel, 500);}
+		 //  alert("Correct- Pizza Hut, Move to Next level");
+	      // setTimeout(nextLevel, 500);
+			 $.mobile.changePage("#myDialog");
+		      }
 		else if(flag2!="" && flag3 == "")
 			$('#mask').attr("src", "images/pizzahut/pizzahut6.png");
 		else if(flag2=="" && flag3!="")
@@ -88,8 +95,9 @@ console.log(jQuery(el).css('background-color'));
 		 flag2= "rgb(246, 217, 45)";
 		 if (flag1!="" && flag3!=""){
 			 $('#mask').attr("src", "images/pizzahut/pizzahut.png");
-		   alert("Correct- Pizza hut, Move to Next level");
-	       setTimeout(nextLevel, 500);}
+		   //alert("Correct- Pizza hut, Move to Next level");
+	       //setTimeout(nextLevel, 500);
+			 $.mobile.changePage("#myDialog");}
 		else if(flag1!="" && flag3 == "")
 			$('#mask').attr("src", "images/pizzahut/pizzahut6.png");
 		else if(flag1=="" && flag3!="")
@@ -104,8 +112,9 @@ console.log(jQuery(el).css('background-color'));
 	 flag3= "rgb(255, 0, 0)";
 	 if (flag1!="" && flag2!=""){
 		 $('#mask').attr("src", "images/pizzahut/pizzahut.png");
-	   alert("Correct- Pizza hut, Move to Next level");
-       setTimeout(nextLevel, 500);}
+	  // alert("Correct- Pizza hut, Move to Next level");
+       //setTimeout(nextLevel, 500);
+		 $.mobile.changePage("#myDialog");}
 	else if(flag1!="" && flag2 == "")
 		$('#mask').attr("src", "images/pizzahut/pizzahut3.png");
 	else if(flag1=="" && flag2!="")
@@ -132,7 +141,23 @@ function nextLevel()
     <p>&copy; 2015 Dew Software. All rights reserved.</p>
   </footer>   </div> 
   
-  
+  <div id="myDialog" data-role="dialog" style="top:0px;left:0px" class="ui-dialog-contain ui-corner-all ui-overlay-shadow">
+	
+		<div data-role="header" data-theme="d" class="ui-corner-top ui-header ui-bar-d" role="banner">
+		
+			<h1 class="ui-title" role="heading" aria-level="1">GOOD JOB!</h1>
+
+		</div>
+
+		<div data-role="content" data-theme="c" class="ui-corner-bottom ui-content ui-body-c" role="main">
+			
+			 <img src="images/pizzahut/pizzahut.png" style=" display: block;margin-left: auto;margin-right: auto" /> 
+			 <br> <p style="margin-left: 45%;"> PIZZAHUT</p> <br>
+			 
+		 		<img src="images/next.jpg" id="next" style="display: block;margin-left: auto;margin-right: auto"/>
+	 		
+		</div>
+	</div>
    
 </body>
 </html>

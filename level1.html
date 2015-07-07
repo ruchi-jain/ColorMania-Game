@@ -1,34 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <meta name="description" content="Color mania"/>
+<meta charset="utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="description" content="Color mania" />
 
-    <title>Color Mania</title>
+<title>Color Mania</title>
 <script src="js/jquery-1.11.3.min.js"></script>
 <script src="js/jquery.mobile-1.4.5.min.js"><</script>
 
 <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css"/>
-    <script src="js/main.js"></script>
-     <script>
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<script src="js/main.js"></script>
+<script>
      window.addEventListener('tizenhwkey', function(e) {
          if (e.keyName == "back") {
         	  window.location.href="homepage.html";
          }
      });
+
      </script>
-     <script>
+<script>
 function changeImage(el) {
 	if( jQuery(el).css('background-color') == "rgb(255, 255, 0)")
 		{
 	    //console.log(color);
 		$('#mask').attr("src", "images/pacMan.jpg");
-		alert("Correct- Pan Man, Move to Next level");
-		setTimeout(nextLevel, 500);
-		
-		
+		//alert("Correct- Pan Man, Move to Next level");
+		$.mobile.changePage("#myDialog");
+		//setTimeout(nextLevel, 500);
 		}
 	else
 		jQuery(el).remove();
@@ -38,37 +39,45 @@ function nextLevel()
 {
 	window.location = 'level2.html';
 	}
+$(document).ready(function(){
+$('#next').click(function(){
+	document.location.href="level2.html";
+});});
 
-			</script>
+	</script>
+
 </head>
 
 <body>
 
-  <div data-role="page" id="level1">
-    <header>
-      <h1>
-        <img src="images/ColorMania.png" width="32"/> Color Mania
-      </h1>
-    </header>
-    
-	
-  <div class="product-preview">
-				<div class="product">
-					
-					<img id="mask" src="images/testImg.png" align="middle" alt="Image" >
-				</div>
-		
-				
-				<h4>Choose a Color:</h4>
-				<div class="swatch">
-					<a href="#mask" data-role="button" onclick="changeImage(this)" style="background: green;"></a>
-					<a href="#mask" data-role="button" onclick="changeImage(this)" style="background: Yellow;"></a>
-					<a href="#mask" data-role="button" onclick="changeImage(this)" style="background: Orange;"></a>
-					
-					<a href="#mask" data-role="button" onclick="changeImage(this)" style="background: Blue;"></a>
-					<a href="#mask" data-role="button" onclick="changeImage(this)" style="background: Purple;"></a>
-					<a href="#mask" data-role="button" onclick="changeImage(this)" style="background: Red;"></a>
-					
+	<div data-role="page" id="level1">
+		<header>
+			<h1>
+				<img src="images/ColorMania.png" width="32" /> Color Mania
+			</h1>
+		</header>
+
+
+		<div class="product-preview">
+			<div class="product">
+
+				<img id="mask" src="images/MtestImage.png" align="middle"
+					alt="Image">
+			</div>
+
+
+			<h4>Choose a Color:</h4>
+			<div class="swatch">
+				<a href="#mask" data-role="button" onclick="changeImage(this)"
+					style="background: green;"></a> <a href="#mask" data-role="button"
+					onclick="changeImage(this)" style="background: Yellow;"></a> <a
+					href="#mask" data-role="button" onclick="changeImage(this)"
+					style="background: Orange;"></a> <a href="#mask" data-role="button"
+					onclick="changeImage(this)" style="background: Blue;"></a> <a
+					href="#mask" data-role="button" onclick="changeImage(this)"
+					style="background: Purple;"></a> <a href="#mask" data-role="button"
+					onclick="changeImage(this)" style="background: Red;"></a>
+
 				<!-- 	
 					<a rel="32,223,95" href="#mask" class="" title="Green"><span style="background: rgba(32, 223, 95, 0.74902);">Green</span></a>
 					<a rel="255,211,8" href="#mask" class="" title="Yellow"><span style="background: rgba(255, 211, 8, 0.74902);">Yellow</span></a>
@@ -76,17 +85,49 @@ function nextLevel()
 					</span></a><a rel="16,200,255" href="#mask" class="" title="Blue"><span style="background: rgba(16, 200, 255, 0.74902);">Blue</span></a>
 					<a rel="142,8,255" href="#mask" class="active" title="Purple"><span style="background: rgba(142, 8, 255, 0.74902);">Purple</span></a>
 					<a rel="245,25,45" href="#mask" class="" title="Red"><span style="background: rgba(245, 25, 45, 0.74902);">Red</span></a> -->
-				</div>
 			</div>
-			
-			
-			
+		</div>
 
-  <footer>
-    <p>&copy; 2015 Dew Software. All rights reserved.</p>
-  </footer>   </div> 
-  
-  
-   
+
+
+
+		<footer>
+			<p>&copy; 2015 Dew Software. All rights reserved.</p>
+		</footer>
+	</div>
+
+	<!--   
+  <div id="myDialog" data-role="dialog" width="250px" height="250px">
+    <div style="top:100px;left:10px" >Correct- Pac Man, Move to Next level
+    <input  type="button" value="" src="images/next.jpg" onclick="nextLevel();" />
+   <img src="images/next.jpg" id="next" style="position:absolute;top:150px;left:80px;">NEXT</img>
+   </div>
+</div> -->
+
+	<!--    <div id="myDialog" data-role="dialog" height="599px"> -->
+	<div id="myDialog" data-role="dialog" style="top: 0px; left: 0px"
+		class="ui-dialog-contain ui-corner-all ui-overlay-shadow ">
+
+		<div data-role="header" data-theme="d"
+			class="ui-corner-top ui-header ui-bar-d" role="banner">
+
+			<h1 class="ui-title" role="heading" aria-level="1">GOOD JOB!</h1>
+
+		</div>
+
+		<div data-role="content" data-theme="c"
+			class="ui-corner-bottom ui-content ui-body-c" role="main">
+
+			<img src="images/pacMan.jpg"
+				style="display: block; margin-left: auto; margin-right: auto" /> <br>
+			<p style="margin-left: 45%;">PACMAN</p>
+			<br> <img src="images/next.jpg"
+				id="next"
+				style="display: block; margin-left: auto; margin-right: auto" />
+		
+		</div>
+	</div>
+
+	
 </body>
 </html>

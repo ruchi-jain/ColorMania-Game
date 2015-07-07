@@ -19,6 +19,11 @@
         	  window.location.href="homepage.html";
          }
      });
+     $(document).ready(function(){
+ 		$('#next').click(function(){
+ 			document.location.href="level5.html";
+ 		});});
+  </script>
      </script>
      <script>
 
@@ -33,8 +38,9 @@
 		flag1="rgb(27, 29, 116)";
 		if (flag2!=""){
 			 $('#mask').attr("src", "images/visaImage.jpg");
-		   alert("Correct- Visa Card, Move to Next level");
-	       setTimeout(nextLevel, 500);}
+		   //alert("Correct- Visa Card, Move to Next level");
+	       //setTimeout(nextLevel, 500);
+			 $.mobile.changePage("#myDialog");}
 		else
 	   	$('#mask').attr("src", "images/visaImage3.png");
 				}
@@ -45,8 +51,9 @@
 		 flag2= "rgb(229, 151, 3)";
 		 if (flag1!=""){
 			 $('#mask').attr("src", "images/visaImage.jpg");
-		   alert("Correct- Visa Card, Move to Next level");
-	       setTimeout(nextLevel, 500);}
+		  // alert("Correct- Visa Card, Move to Next level");
+	       //setTimeout(nextLevel, 500);}
+			 $.mobile.changePage("#myDialog");}
 		else
 	     $('#mask').attr("src", "images/visaImage4.png");
 	    
@@ -117,7 +124,23 @@ function nextLevel()
 		</footer>
 	</div>
 
+ <div id="myDialog" data-role="dialog" style="top:0px;left:0px" class="ui-dialog-contain ui-corner-all ui-overlay-shadow">
+	
+		<div data-role="header" data-theme="d" class="ui-corner-top ui-header ui-bar-d" role="banner">
+		
+			<h1 class="ui-title" role="heading" aria-level="1">GREAT JOB!</h1>
 
+		</div>
+
+		<div data-role="content" data-theme="c" class="ui-corner-bottom ui-content ui-body-c" role="main">
+			
+			 <img src="images/visaImage.jpg" style=" display: block;margin-left: auto;margin-right: auto" /> 
+			 <br> <p style="margin-left: 45%;"> VISA CARD</p> <br>
+			 
+		 		<img src="images/next.jpg" id="next" style="display: block;margin-left: auto;margin-right: auto"/>
+	 		
+		</div>
+	</div>
 
 </body>
 </html>

@@ -18,6 +18,10 @@
         	  window.location.href="homepage.html";
          }
      });
+     $(document).ready(function(){
+  		$('#next').click(function(){
+  			document.location.href="level8.html";
+  		});});
      </script>
 </head>
 
@@ -59,6 +63,7 @@
 			</div>
 			
 			
+			
 			<script>
 			var flag1="";
 			var flag2="";
@@ -71,8 +76,10 @@ console.log(jQuery(el).css('background-color'));
 		flag1="rgb(255, 0, 0)";
 		if (flag2!=""){
 			 $('#mask').attr("src", "images/tomato2.png");
-		   alert("Correct- Tomato, Move to Next level");
-	       setTimeout(nextLevel, 500);}
+		  // alert("Correct- Tomato, Move to Next level");
+	       //setTimeout(nextLevel, 500);}
+			 $.mobile.changePage("#myDialog");
+	      }
 		else
 	   	$('#mask').attr("src", "images/tomato1.png");
 				}
@@ -83,8 +90,10 @@ console.log(jQuery(el).css('background-color'));
 		 flag2= "rgb(34, 177, 76)";
 		 if (flag1!=""){
 			 $('#mask').attr("src", "images/tomato2.png");
-		   alert("Correct- Tomato, Move to Next level");
-	       setTimeout(nextLevel, 500);}
+		  // alert("Correct- Tomato, Move to Next level");
+	     //  setTimeout(nextLevel, 500);}
+			 $.mobile.changePage("#myDialog");
+	      }
 		else
 	     $('#mask').attr("src", "images/tomato3.png");
 	    
@@ -108,7 +117,23 @@ function nextLevel()
     <p>&copy; 2015 Dew Software. All rights reserved.</p>
   </footer>   </div> 
   
-  
+  <div id="myDialog" data-role="dialog" style="top:0px;left:0px" class="ui-dialog-contain ui-corner-all ui-overlay-shadow">
+	
+		<div data-role="header" data-theme="d" class="ui-corner-top ui-header ui-bar-d" role="banner">
+		
+			<h1 class="ui-title" role="heading" aria-level="1">NICE!</h1>
+
+		</div>
+
+		<div data-role="content" data-theme="c" class="ui-corner-bottom ui-content ui-body-c" role="main">
+			
+			 <img src="images/tomato2.png" style=" display: block;margin-left: auto;margin-right: auto" /> 
+			 <br> <p style="margin-left: 45%;"> TOMATO</p> <br>
+			 
+		 		<img src="images/next.jpg" id="next" style="display: block;margin-left: auto;margin-right: auto"/>
+	 		
+		</div>
+	</div>
    
 </body>
 </html>

@@ -152,7 +152,7 @@ h3 {
 	padding:1px;
 	border:1px solid #ccc;
 	width:320px;
-	height:400px;
+	height:300px;
 }
 
 .product-preview .product img {
@@ -313,11 +313,7 @@ pre {
 	font-size:0.85em;
 }
 
-.mask {
-	position:absolute;
-	top:0;
-	left:0;
-}
+
 
 .swatch {
 	padding:5px 0;
@@ -360,4 +356,24 @@ pre {
 .swatch a.active span {
 	border:2px solid yellow;
 	height:21px;
+}
+
+#mask {
+	position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;}
+    
+   
+.ui-dialog-titlebar-close {
+  visibility: hidden;
+}
+.ui-widget-header {
+  border: none;
+  background: transparent;
+}
+.ui-widget-content {
+  background: transparent;
 }
